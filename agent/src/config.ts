@@ -54,7 +54,8 @@ export const config = {
   okxApiPassphrase: process.env.OKX_API_PASSPHRASE ?? "",
 
   // --- Server ---
-  port: parseInt(process.env.AGENT_PORT ?? "3001", 10),
+  // Render sets PORT; AGENT_PORT is used locally
+  port: parseInt(process.env.PORT ?? process.env.AGENT_PORT ?? "3001", 10),
 
   // --- Logging ---
   logLevel: process.env.AGENT_LOG_LEVEL ?? "info",

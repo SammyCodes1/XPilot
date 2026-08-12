@@ -1,0 +1,39 @@
+# Render Blueprint — XPilot Agent
+# Deploy via: render blueprint launch
+# Or set up manually as a "Web Service" pointing to /agent
+
+services:
+  - type: web
+    name: xpilot-agent
+    rootDir: agent
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production
+      - key: LLM_PROVIDER
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com
+      - key: PRIVATE_KEY
+        sync: false
+      - key: X_LAYER_TESTNET_RPC
+        value: https://testrpc.xlayer.tech
+      - key: DECISION_LOG_ADDRESS
+        value: "0x208A8fD97286039eAA2CC7093a13f43B67f79521"
+      - key: COPILOT_REGISTRY_ADDRESS
+        value: "0xD79B24B2503246AE61dc1BF6C8a08cF61F7D057d"
+      - key: AGENT_SCAN_INTERVAL_MS
+        value: "300000"
+      - key: EXECUTE_TRADES
+        value: "false"
+      - key: AGENT_LOG_LEVEL
+        value: info
