@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { keccak256, toBytes } from "viem";
-import { Card, MonoText } from "@/components/ui";
+import { Card, MonoText, Badge } from "@/components/ui";
 
 // ---------------------------------------------------------------------------
 // Types

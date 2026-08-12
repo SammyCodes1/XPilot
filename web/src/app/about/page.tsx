@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Badge, Timeline, MonoText } from "@/components/ui";
+import { Card, Timeline, MonoText } from "@/components/ui";
 import { Navbar } from "@/components/shared/Navbar";
 
 // ---------------------------------------------------------------------------
