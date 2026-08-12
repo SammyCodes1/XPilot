@@ -1,0 +1,29 @@
+{
+  "network": "X Layer Testnet",
+  "chainId": 1952,
+  "rpcUrl": "https://testrpc.xlayer.tech",
+  "explorerUrl": "https://www.oklink.com/x-layer-testnet",
+  "deployedAt": "2026-08-11",
+  "deployer": "0x8d99cE3A2543f398c13b9D299B4D9258B5019703",
+  "contracts": {
+    "DecisionLog": {
+      "address": "0x208A8fD97286039eAA2CC7093a13f43B67f79521",
+      "constructor": {
+        "initialOwner": "0x8d99cE3A2543f398c13b9D299B4D9258B5019703",
+        "initialAgent": "0x8d99cE3A2543f398c13b9D299B4D9258B5019703"
+      }
+    },
+    "CopilotRegistry": {
+      "address": "0xD79B24B2503246AE61dc1BF6C8a08cF61F7D057d",
+      "constructor": {
+        "initialOwner": "0x8d99cE3A2543f398c13b9D299B4D9258B5019703"
+      }
+    }
+  },
+  "agent": {
+    "address": "0x8d99cE3A2543f398c13b9D299B4D9258B5019703",
+    "displayName": "XPilot Agent",
+    "registered": true
+  },
+  "transactionHash": "See broadcast/Deploy.s.sol/1952/run-latest.json"
+}

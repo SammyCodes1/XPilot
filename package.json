@@ -1,0 +1,16 @@
+{
+  "name": "xpilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-verified DeFi trading copilot — on-chain attested reasoning for every trade",
+  "scripts": {
+    "lint": "pnpm -r lint",
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
+    "clean": "pnpm -r clean"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* XPilot — Base layer                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans text-base;
+  }
+
+  /* Selection — warm accent */
+  ::selection {
+    @apply bg-ember-100 text-ink-800;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Component utilities                                                 */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  /* Mono text pattern — use for all numeric data, hashes, addresses */
+  .mono-data {
+    @apply font-mono text-sm tracking-mono tabular-nums;
+    font-feature-settings: "tnum", "ss02";
+  }
+
+  /* Card surface — shared by Card, modal, and panel components */
+  .surface-card {
+    @apply bg-cream-surface rounded-lg border border-border shadow-xs;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-ink-800 font-semibold tracking-tight;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scrollbar — subtle, warm                                           */
+/* ------------------------------------------------------------------ */
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.border.medium") transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme("colors.border.medium");
+    border-radius: 3px;
+  }
+}
