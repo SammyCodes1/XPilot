@@ -12,6 +12,7 @@ web/.next/
 contracts/out/
 contracts/cache/
 contracts/broadcast/
+contracts/lib/
 
 # Environment files
 .env
