@@ -5,6 +5,11 @@ import {
   keccak256,
   toBytes,
   type Hash,
+  type WalletClient,
+  type PublicClient,
+  type Transport,
+  type Chain,
+  type Account,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { xLayerTestnet } from "./chain.js";
@@ -15,17 +20,17 @@ import { logger } from "../logger.js";
 // Clients (lazy — created once, reused)
 // ---------------------------------------------------------------------------
 
-let _walletClient: ReturnType<typeof createWalletClient> | null = null;
-let _publicClient: ReturnType<typeof createPublicClient> | null = null;
+let _walletClient: WalletClient<Transport, Chain, Account> | null = null;
+let _publicClient: PublicClient<Transport, Chain> | null = null;
 
 /** Normalise a private key string: strip 0x if present, re-add, create account. */
-function getAccount() {
+function getAccount(): Account {
   let key = config.privateKey;
   if (key.startsWith("0x")) key = key.slice(2) as `0x${string}`;
   return privateKeyToAccount(`0x${key}`);
 }
 
-export function getWalletClient() {
+export function getWalletClient(): WalletClient<Transport, Chain, Account> {
   if (!_walletClient) {
     const account = getAccount();
     _walletClient = createWalletClient({
@@ -38,7 +43,7 @@ export function getWalletClient() {
   return _walletClient;
 }
 
-export function getPublicClient() {
+export function getPublicClient(): PublicClient<Transport, Chain> {
   if (!_publicClient) {
     _publicClient = createPublicClient({
       chain: xLayerTestnet,

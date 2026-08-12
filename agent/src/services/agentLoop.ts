@@ -104,7 +104,7 @@ export async function runOnce(): Promise<DecisionRecord[]> {
     // Phase 5 — Reveal reasoning on-chain
     // -----------------------------------------------------------------------
     logger.info("Phase 4+5: Committing and revealing on-chain");
-    let commitResult: Awaited<ReturnType<typeof commitAndReveal>>;
+    let commitResult: Awaited<ReturnType<typeof commitAndReveal>> | undefined;
     let commitError: string | null = null;
 
     try {
