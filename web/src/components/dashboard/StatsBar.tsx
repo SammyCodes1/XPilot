@@ -87,8 +87,9 @@ export function StatsBar() {
         for (let i = count - 1; i >= start; i--) {
           const d = await fetchDecision(i);
           if (d && d.outcomeRecorded) {
-            if (d.pnlBps > 0n) wins++;
-            else if (d.pnlBps < 0n) losses++;
+            const pnl = Number(d.pnlBps);
+            if (pnl > 0) wins++;
+            else if (pnl < 0) losses++;
             // pnlBps === 0 counts as neither
           }
         }
