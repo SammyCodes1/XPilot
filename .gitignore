@@ -29,3 +29,4 @@ Thumbs.db
 
 # Logs
 *.log
+.github/workflows/ci.yml
